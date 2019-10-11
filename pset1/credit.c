@@ -3,22 +3,28 @@
 # include <math.h>
 
 int count(long input);
-int cctype(long input, int* ptr0);
+int cctype(long input, int *ptr0);
 
 int main(void)
 {
     // Get user input
-    long number = get_long("Number: ");
+    int nDigits = 0;
+    long number = 0;
     
     // Count number of digits
-    int nDigits = count(number);
+    do
+    {
+        number = get_long("Number: ");
+        nDigits = count(number);
+    }
+    while (nDigits > 16);
     
     // Check for first two digits
     int* ptr0 = &nDigits;
     int twoDigits = cctype(number, ptr0); 
 
     // Extract digits into array
-    int digitArray[16] = {0};
+    int digitArray[20] = {0};
     long n = number;
     int count = 0;
     
@@ -64,24 +70,116 @@ int main(void)
         checksum += digitArray[i];
     }
     
-    // Visa
-    if(nDigits == 13 || nDigits == 16)
-    
-    // Print checks
-    printf("Number of digits: %i\n", nDigits);
-    printf("First 2 digits: %i\n", twoDigits);
-    for (int i = 0; i < nDigits; i++)
+    // Number of digits check:
+    // 1 --> Visa, Amex or Mastercard
+    // 0 --> Invalid
+     
+    int digitCheck = 0;
+    if(nDigits == 13 || nDigits == 15 || nDigits == 16) 
     {
-        printf("Digit %i: %d\n", i + 1, digitArray[i]);    
+        digitCheck = 1;
     }
+    else
+    {
+        digitCheck = 0;
+    }
+    
+    // First two digits check:
+    // 1 --> Amex
+    // 2 --> Mastercard
+    // 3 --> Visa
+    // 0 --> Invalid
+    
+    int typeCheck = 0;
+    if (twoDigits == 34 || twoDigits == 37)
+    {
+        typeCheck = 1;
+    }
+    else if (twoDigits >= 51 && twoDigits <= 55)
+    {
+        typeCheck = 2;
+    }
+    else if (twoDigits >= 40 && twoDigits <= 49)
+    {
+        typeCheck = 3;
+    }
+    else
+    {
+        typeCheck = 0;
+    }  
+    
+    // Checksum check:
+    // 1 --> true
+    // 0 --> false
+    
+    int checkChecksum = (checksum % 10 == 0) ? 1 : 0;
+    
+    // Preliminary Checks:
+    if (digitCheck == 0)
+    {
+        printf("INVALID\n");
+    } 
+    
+    if (typeCheck == 0)
+    {
+        printf("INVALID\n");        
+    }
+    
+    // Check for AMEX: 
+    if (digitCheck == 1)
+    {
+        if (typeCheck == 1)
+        {
+            if (checkChecksum == 1)
+            {
+                printf("AMEX\n");    
+            }
+            else
+            {
+                printf("INVALID\n");
+            }            
+        }
+    }
+    
+    // Check for MASTERCARD
+    if (digitCheck == 1)
+    {
+        if (typeCheck == 2)
+        {
+            if (checkChecksum == 1)
+            {
+                printf("MASTERCARD\n");
+            }
+            else
+            {
+                printf("INVALID\n");    
+            }
+        }
+    }
+            
+    // Check for Visa        
+    if (digitCheck == 1)
+    {
+        if (typeCheck == 3)
+        {
+            if (checkChecksum == 1)
+            {
+                printf("VISA\n");                 
+            }
+            else
+            {
+                printf("INVALID\n");    
+            }
+        }
+    }
+        
+    // Print checks
+    printf("Digit Check: %i\n", digitCheck);
+    printf("First 2 digits: %i\n", twoDigits);
     printf("Checksum: %i\n", checksum);
+    printf("Type Check: %i\n", typeCheck);
+    printf("checkChecksum: %d\n", checkChecksum);
 } 
-
-
-
-
-
-
 
 // Function to count number of digits
 int count(long input)
@@ -96,9 +194,8 @@ int count(long input)
 }
 
 // Function to get first two digits
-int cctype(long input, int* ptr)
+int cctype(long input, int *ptr0)
 {
-    int power = *ptr - 2;
-    int output = input/pow(10, *ptr - 2);
+    int output = input/pow(10, *ptr0 - 2);
     return output;
 }
