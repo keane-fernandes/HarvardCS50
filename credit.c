@@ -20,7 +20,7 @@ int main(void)
     while (nDigits > 16);
     
     // Check for first two digits
-    int* ptr0 = &nDigits;
+    int *ptr0 = &nDigits;
     int twoDigits = cctype(number, ptr0); 
 
     // Extract digits into array
@@ -38,7 +38,7 @@ int main(void)
     // Digits to be doubled and summed
     int tempVal = 0;
     int checksum = 0;
-    for (int i = 1; i <= nDigits - 1; i+=2)
+    for (int i = 1; i <= nDigits - 1; i += 2)
     {
         tempVal = digitArray[i];
         switch (tempVal)
@@ -65,7 +65,7 @@ int main(void)
     }
     
     // Remaining digits to be summed
-    for (int i = 0; i <= nDigits - 1; i+=2) 
+    for (int i = 0; i <= nDigits - 1; i += 2) 
     {
         checksum += digitArray[i];
     }
@@ -75,7 +75,7 @@ int main(void)
     // 0 --> Invalid
      
     int digitCheck = 0;
-    if(nDigits == 13 || nDigits == 15 || nDigits == 16) 
+    if (nDigits == 13 || nDigits == 15 || nDigits == 16) 
     {
         digitCheck = 1;
     }
@@ -172,13 +172,6 @@ int main(void)
             }
         }
     }
-        
-    // Print checks
-    printf("Digit Check: %i\n", digitCheck);
-    printf("First 2 digits: %i\n", twoDigits);
-    printf("Checksum: %i\n", checksum);
-    printf("Type Check: %i\n", typeCheck);
-    printf("checkChecksum: %d\n", checkChecksum);
 } 
 
 // Function to count number of digits
@@ -196,6 +189,6 @@ int count(long input)
 // Function to get first two digits
 int cctype(long input, int *ptr0)
 {
-    int output = input/pow(10, *ptr0 - 2);
+    int output = input / pow(10, *ptr0 - 2);
     return output;
 }
