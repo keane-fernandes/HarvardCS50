@@ -172,13 +172,6 @@ int main(void)
             }
         }
     }
-        
-    // Print checks
-    printf("Digit Check: %i\n", digitCheck);
-    printf("First 2 digits: %i\n", twoDigits);
-    printf("Checksum: %i\n", checksum);
-    printf("Type Check: %i\n", typeCheck);
-    printf("checkChecksum: %d\n", checkChecksum);
 } 
 
 // Function to count number of digits
