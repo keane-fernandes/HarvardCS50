@@ -25,7 +25,7 @@ int main(int argc, string argv[])
     
     // Check the key falls within acceptable range:
     int k = atoi(argv[1]);
-    if (k < 0 || k > 26)
+    if (k < 0 || k > 100)
     {
         printf("Usage: ./caesar key\n");
         return 1;        
