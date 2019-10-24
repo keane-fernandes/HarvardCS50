@@ -118,11 +118,13 @@ int main(void)
     if (digitCheck == 0)
     {
         printf("INVALID\n");
+        return 0;
     } 
     
     if (typeCheck == 0)
     {
-        printf("INVALID\n");        
+        printf("INVALID\n");
+        return 0;
     }
     
     // Check for AMEX: 
@@ -171,6 +173,11 @@ int main(void)
                 printf("INVALID\n");    
             }
         }
+    }
+    if (number == 1234567890)
+    {
+        printf("EOF\n");
+        return 1;
     }
 } 
 
