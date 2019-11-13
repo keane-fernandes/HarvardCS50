@@ -5,10 +5,10 @@ The <stdint.h> header shall declare sets of integer types having specified width
 
 ## What's the point of using `uint8_t`, `uint32_t`, `int32_t`, and `uint16_t` in a program?
 
-uint8_t  - unsigned integer type (8 bit)
-uint16_t - unsigned integer type (16 bit)
-uint32_t - unsigned integer type (32 bit)
-int32_t  - signed integer type (32 bit)
+- uint8_t  - unsigned integer type (8 bit)
+- uint16_t - unsigned integer type (16 bit)
+- uint32_t - unsigned integer type (32 bit)
+- int32_t  - signed integer type (32 bit)
 
 ## How many bytes is a `BYTE`, a `DWORD`, a `LONG`, and a `WORD`, respectively?
 
