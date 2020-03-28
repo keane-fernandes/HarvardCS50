@@ -4,4 +4,4 @@
 * Problem sets 0, 1 and 2.
 
 ## 2020
-* Problem set 3 onwards are from CS50 in 2020.
+* Problem sets 3, 4, 5, 6, 7 and 8.
