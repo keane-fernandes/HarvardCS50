@@ -3,7 +3,7 @@ This are my solutions to the Harvard CS50 course. I started the course towards t
 
 ## 2019
 ### [Problem Set 1](HarvardCS50/2019/pset1)
-  * [Hello](HarvardCS50/2019/pset1/hello.c)
+  * [Hello](HarvardCS50/blob/master/2019/pset1/credit.c)
   * [Mario (more)](HarvardCS50/2019/pset1/mario_more.c)
   * [Mario (less)](HarvardCS50/2019/pset1/mario_less.c)
   * [Credit](HarvardCS50/2019/pset1/credit.c)
