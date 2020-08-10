@@ -6,7 +6,7 @@ This are my solutions to the Harvard CS50 course. I started the course towards t
   * [Hello](HarvardCS50/blob/master/2019/pset1/credit.c)
   * [Mario (more)](HarvardCS50/2019/pset1/mario_more.c)
   * [Mario (less)](HarvardCS50/2019/pset1/mario_less.c)
-  * [Credit](HarvardCS50/2019/pset1/credit.c)
+  * [Credit](HarvardCS50/blob/master/2019/pset1/credit.c)
   
 ### [Problem Set 2](HarvardCS50/2019/pset2)
   * [Caesar](HarvardCS50/2019/pset2/caesar.c)
