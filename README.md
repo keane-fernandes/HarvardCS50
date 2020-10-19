@@ -24,10 +24,3 @@ This are my solutions to the Harvard CS50 course. I started the course towards t
 
 ### [Problem Set 5](/2020/pset5)
   * [Speller](/2020/pset5/dictionary.c)
-  
-### [Problem Set 6](/2020/pset6)
-  * [Hello](/2020/pset6/hello.py)
-  * [Hello](/2020/pset6/hello.py)
-  * [Hello](/2020/pset6/hello.py)
-  * [Hello](/2020/pset6/hello.py)
-  * [Hello](/2020/pset6/hello.py)
